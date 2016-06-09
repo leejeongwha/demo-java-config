@@ -31,4 +31,12 @@ public class PersonController {
 		List<Person> persons = personRepository.findAll();
 		return persons;
 	}
+
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
+	@RequestMapping(value = "/persons", method = RequestMethod.POST)
+	public Person create(Person person) {
+		return personRepository.save(person);
+	}
 }
